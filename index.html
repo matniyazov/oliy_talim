@@ -1,0 +1,132 @@
+<!-- Created by Aditya --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new project</title>
+    <link rel="" href="https://www.canva.com/design/DAGRervkTg4/En_IqG_l0pQ7moipIFO4wg/view?utm_content=DAGRervkTg4&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Borel&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <script src="java.js"></script>
+      <div class="container">
+        <div class="head">
+          <h1 class="cont_head">CharCounter</h1>
+        </div>
+        <div class="input">
+          <textarea
+            type="text"
+            id="text_input"
+            spellcheck="false"
+            placeholder="Enter some text here!"
+          ></textarea>
+        </div>
+        <div class="output">
+          <div class="first_two">
+            <div class="characters" id="">
+              <p id="characters" class="big">0</p>
+              <p class="tag">Characters</p>
+            </div>
+            <div class="words">
+              <p id="words" class="big">0</p>
+              <p class="tag">Words</p>
+            </div>
+          </div>
+          <div class="last_two">
+            <div class="insta_limit">
+              <p class="limit big" id="insta_limit">2200</p>
+              <p class="tag">Instagram Limit</p>
+            </div>
+            <div class="twitter_limit">
+              <p class="limit big" id="twitter_limit">280</p>
+              <p class="tag">Twitter Limit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div><button class="button-1"><a href="https://t.me/+u0R0r7NZ4FszZjQy">Join My Telegram CHannel</a></button></div>
+      <div><button class="button-2"><a href="https://www.instagram.com/matniyazov__1/?utm_source=ig_web_button_share_sheet">My Instagram</a></button></div>
+      
+      <script src="java.js"> </script>
+      <script>
+        ScrollReveal({
+          // reset: true,
+          distance: "60px",
+          duration: 2500,
+          delay: 400,
+        });
+  
+        ScrollReveal().reveal(".container", { delay: 100, origin: "left" });
+        ScrollReveal().reveal(".cont_head", { delay: 600, origin: "left" });
+        ScrollReveal().reveal(".input", { delay: 400, origin: "right" });
+        ScrollReveal().reveal(".output", { delay: 600, origin: "bottom" });
+        ScrollReveal().reveal(".characters", { delay: 600, origin: "right" });
+        ScrollReveal().reveal(".words", { delay: 500, origin: "left" });
+        ScrollReveal().reveal(".insta_limit", { delay: 550, origin: "bottom" });
+        ScrollReveal().reveal(".twitter_limit", { delay: 650, origin: "right" });
+        
+        var textarea = document.getElementById("text_input");
+  var words_counter = document.getElementById("words");
+  var char_counter = document.getElementById("characters");
+  var insta_limit = document.getElementById("insta_limit");
+  var twitter_limit = document.getElementById("twitter_limit");
+  var in_limit = 2200;
+  var x_limit = 280;
+  
+  // character counter function
+  const count_char = (e) => {
+    char_counter.innerText = e.target.value.length;
+  };
+  
+  // instagram-limit function
+  const insta_limit_checker = (e) => {
+    insta_limit.innerText = in_limit - e.target.value.length;
+  };
+  
+  // twitter limit checker
+  const twitter_limit_checker = (e) => {
+    twitter_limit.innerText = x_limit - e.target.value.length;
+  };
+  // color changer
+  const color_changer = (e) => {
+    if (x_limit - e.target.value.length < 0) {
+      twitter_limit.style.color = "red";
+    } else {
+      twitter_limit.style.color = "black";
+    }
+  
+    if (in_limit - e.target.value.length < 0) {
+      insta_limit.style.color = "red";
+    } else {
+      insta_limit.style.color = "black";
+    }
+  };
+  
+  // word counter
+  
+  const word_counter = (e) => {
+    let str = e.target.value;
+    let str_array = str.split(" ");
+    words_counter.innerText = str_array.length;
+  };
+  
+  textarea.addEventListener("input", function (e) {
+    count_char(e);
+    insta_limit_checker(e);
+    twitter_limit_checker(e);
+    color_changer(e);
+    word_counter(e);
+  });
+  
+      </script>
+    
+    
+</body>
+</html>
